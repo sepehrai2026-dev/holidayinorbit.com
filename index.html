@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holiday in Orbit — Your Guide to Space Tourism</title>
+<meta name="description" content="Explore the future of space tourism. Orbital hotels, lunar getaways, zero-gravity experiences, and everything you need to plan your first holiday in orbit.">
+<meta name="keywords" content="space tourism, orbital hotel, lunar vacation, zero gravity, space travel, space holiday">
+<meta property="og:title" content="Holiday in Orbit — Your Guide to Space Tourism">
+<meta property="og:description" content="Explore the future of space tourism. Orbital hotels, lunar getaways, zero-gravity experiences, and everything you need to plan your first holiday in orbit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://holidayinorbit.com">
+<link rel="canonical" href="https://holidayinorbit.com">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --site-accent:{{site.accentColor}};
+  --accent:{{site.accentColor}};
+  --accent-light:{{site.accentLight}};
+  --accent-dark:{{site.accentDark}};
+  --bg:#0a0a0a;
+  --bg-card:#111111;
+  --bg-alt:#0e0e0e;
+  --text:#e8e8e8;
+  --text-secondary:#a0a0a0;
+  --text-muted:#666666;
+  --border:#1e1e1e;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* --- Hide emoji placeholders --- */
+.nav-logo-icon,
+.story-icon{
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* --- Nav --- */
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  background:rgba(10,10,10,0.85);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:1.25rem 2rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav-logo{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:800;
+  font-size:1.1rem;
+  letter-spacing:-0.02em;
+}
+
+.nav-links{
+  display:flex;
+  gap:2rem;
+}
+
+.nav-links a{
+  color:var(--text-muted);
+  text-decoration:none;
+  font-size:0.8rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  transition:color 0.2s;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+}
+
+/* --- Hero --- */
+.hero{
+  padding:10rem 2rem 6rem;
+  border-bottom:1px solid var(--border);
+}
+
+.hero-inner{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.hero-tagline{
+  font-size:0.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  color:var(--accent);
+  margin-bottom:1.5rem;
+}
+
+.hero-headline{
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:-0.03em;
+  max-width:800px;
+  margin-bottom:1.5rem;
+}
+
+.hero-sub{
+  font-size:1.15rem;
+  color:var(--text-secondary);
+  max-width:550px;
+  line-height:1.7;
+}
+
+.hero-rule{
+  width:60px;
+  height:2px;
+  background:var(--accent);
+  margin-top:3rem;
+}
+
+/* --- Sections --- */
+.section-header{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 2rem;
+}
+
+.section-title{
+  font-size:0.8rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  color:var(--text-muted);
+}
+
+.section-rule{
+  width:40px;
+  height:2px;
+  background:var(--accent);
+  margin-top:1rem;
+}
+
+/* --- Stories --- */
+.stories{
+  padding:5rem 0;
+  border-bottom:1px solid var(--border);
+}
+
+.story-grid{
+  max-width:1100px;
+  margin:3rem auto 0;
+  padding:0 2rem;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+}
+
+.story-card{
+  background:var(--bg-card);
+  overflow:hidden;
+  transition:background 0.25s;
+}
+
+.story-card:hover{
+  background:#161616;
+}
+
+.story-banner{
+  height:4px;
+  position:relative;
+}
+
+.story-body{
+  padding:2rem 1.75rem 2.25rem;
+}
+
+.story-tag{
+  display:inline-block;
+  font-size:0.65rem;
+  font-weight:700;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  margin-bottom:0.75rem;
+}
+
+.story-title{
+  font-size:1.1rem;
+  font-weight:800;
+  line-height:1.3;
+  letter-spacing:-0.01em;
+  margin-bottom:0.75rem;
+}
+
+.story-excerpt{
+  font-size:0.88rem;
+  color:var(--text-secondary);
+  line-height:1.65;
+  margin-bottom:1.25rem;
+}
+
+.story-meta{
+  font-size:0.72rem;
+  color:var(--text-muted);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+
+/* --- About --- */
+.about{
+  padding:5rem 2rem;
+  border-bottom:1px solid var(--border);
+}
+
+.about-inner{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.about-content{
+  max-width:650px;
+  margin-top:2.5rem;
+  font-size:1rem;
+  color:var(--text-secondary);
+  line-height:1.8;
+}
+
+.about-content h3{
+  color:var(--text);
+  font-size:1.15rem;
+  font-weight:800;
+  margin:2rem 0 0.75rem;
+  letter-spacing:-0.01em;
+}
+
+.about-content p{
+  margin-bottom:1.25rem;
+}
+
+.about-content a{
+  color:var(--accent);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:border-color 0.2s;
+}
+
+.about-content a:hover{
+  border-bottom-color:var(--accent);
+}
+
+/* --- Newsletter --- */
+.newsletter{
+  padding:5rem 2rem;
+  border-bottom:1px solid var(--border);
+}
+
+.newsletter-inner{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.nl-title{
+  font-size:1.6rem;
+  font-weight:900;
+  letter-spacing:-0.02em;
+  margin-bottom:0.75rem;
+}
+
+.nl-sub{
+  color:var(--text-secondary);
+  font-size:0.95rem;
+  margin-bottom:2rem;
+  max-width:450px;
+  line-height:1.6;
+}
+
+.nl-form{
+  display:flex;
+  gap:0;
+  max-width:440px;
+}
+
+.nl-form input{
+  flex:1;
+  padding:0.85rem 1rem;
+  border:1px solid var(--border);
+  border-right:none;
+  border-radius:0;
+  font-size:0.9rem;
+  background:var(--bg-card);
+  color:var(--text);
+  font-family:inherit;
+  outline:none;
+  transition:border-color 0.2s;
+}
+
+.nl-form input:focus{
+  border-color:var(--accent);
+}
+
+.nl-form button{
+  padding:0.85rem 1.75rem;
+  background:var(--accent);
+  color:#fff;
+  border:1px solid var(--accent);
+  border-radius:0;
+  font-weight:700;
+  font-size:0.8rem;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  cursor:pointer;
+  transition:background 0.2s;
+  white-space:nowrap;
+  font-family:inherit;
+}
+
+.nl-form button:hover{
+  background:var(--accent-dark);
+  border-color:var(--accent-dark);
+}
+
+/* --- Footer --- */
+.footer{
+  padding:3rem 2rem;
+}
+
+.footer-inner{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border);
+}
+
+.footer-logo{
+  font-weight:800;
+  font-size:1rem;
+  letter-spacing:-0.02em;
+}
+
+.footer-link{
+  color:var(--text-muted);
+  text-decoration:none;
+  font-size:0.8rem;
+  letter-spacing:0.03em;
+  transition:color 0.2s;
+}
+
+.footer-link:hover{
+  color:var(--accent);
+}
+
+.footer-bottom{
+  padding-top:1.5rem;
+}
+
+.footer-bottom p{
+  font-size:0.72rem;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+
+/* --- Responsive --- */
+@media(max-width:900px){
+  .story-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .hero{
+    padding:8rem 1.25rem 4rem;
+  }
+
+  .nav-inner{
+    padding:1rem 1.25rem;
+  }
+
+  .nav-links{
+    gap:1.25rem;
+  }
+
+  .nav-links a{
+    font-size:0.72rem;
+  }
+
+  .story-grid{
+    grid-template-columns:1fr;
+    padding:0 1.25rem;
+  }
+
+  .stories{
+    padding:4rem 0;
+  }
+
+  .section-header{
+    padding:0 1.25rem;
+  }
+
+  .about{
+    padding:4rem 1.25rem;
+  }
+
+  .newsletter{
+    padding:4rem 1.25rem;
+  }
+
+  .nl-form{
+    flex-direction:column;
+  }
+
+  .nl-form input{
+    border-right:1px solid var(--border);
+    border-bottom:none;
+  }
+
+  .nl-form input:focus{
+    border-color:var(--accent);
+  }
+
+  .footer{
+    padding:2.5rem 1.25rem;
+  }
+
+  .footer-top{
+    flex-direction:column;
+    gap:1rem;
+    text-align:center;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="nav-logo-icon" aria-hidden="true">🚀</span>Holiday in Orbit</a>
+    <div class="nav-links">
+      <a href="#stories">Stories</a>
+      <a href="#about">About</a>
+      <a href="#newsletter">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tagline">SPACE TRAVEL</div>
+    <h1 class="hero-headline">Your Next Vacation Is 400km Up</h1>
+    <p class="hero-sub">From orbital suites with Earth views to lunar resort packages, space tourism is no longer science fiction. We cover every launch, every destination, every experience.</p>
+    <div class="hero-rule"></div>
+  </div>
+</header>
+
+<main>
+  <section class="stories" id="stories">
+    <div class="section-header">
+      <h2 class="section-title">Latest Stories</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="story-grid">
+      <div class="story-card">
+  <div class="story-banner" style="background:linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%)"><span class="story-icon" aria-hidden="true">🏨</span></div>
+  <div class="story-body">
+    <span class="story-tag">Orbital Hotels</span>
+    <div class="story-title">Inside Voyager Station: The First Hotel With an Earth View</div>
+    <p class="story-excerpt">A deep dive into the rotating space station promising artificial gravity, fine dining, and sunrises every 90 minutes. We toured the prototype module.</p>
+    <span class="story-meta">8 min read · June 2026</span>
+  </div>
+</div>
+
+<div class="story-card">
+  <div class="story-banner" style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)"><span class="story-icon" aria-hidden="true">🌙</span></div>
+  <div class="story-body">
+    <span class="story-tag">Lunar Getaways</span>
+    <div class="story-title">Lunar Gateway Lodge Announces 2028 Booking Window</div>
+    <p class="story-excerpt">The first lunar surface hotel has opened reservations for its inaugural season. Here is what a week on the Moon will actually look like and cost.</p>
+    <span class="story-meta">6 min read · June 2026</span>
+  </div>
+</div>
+
+<div class="story-card">
+  <div class="story-banner" style="background:linear-gradient(135deg, #2e1065 0%, #581c87 50%, #7c3aed 100%)"><span class="story-icon" aria-hidden="true">🧑‍🚀</span></div>
+  <div class="story-body">
+    <span class="story-tag">Zero-G Experiences</span>
+    <div class="story-title">We Tried Zero-Gravity Yoga and It Changed Everything</div>
+    <p class="story-excerpt">Our editor spent three days floating through poses in microgravity. The results were equal parts transcendent and hilarious.</p>
+    <span class="story-meta">5 min read · May 2026</span>
+  </div>
+</div>
+
+<div class="story-card">
+  <div class="story-banner" style="background:linear-gradient(135deg, #042f2e 0%, #134e4a 50%, #0f766e 100%)"><span class="story-icon" aria-hidden="true">🌍</span></div>
+  <div class="story-body">
+    <span class="story-tag">Earth Views</span>
+    <div class="story-title">The 10 Most Photographed Sights From Low Earth Orbit</div>
+    <p class="story-excerpt">From the aurora borealis seen from above to city grids glowing at night, these are the views that make every astronaut reach for their camera.</p>
+    <span class="story-meta">4 min read · May 2026</span>
+  </div>
+</div>
+
+<div class="story-card">
+  <div class="story-banner" style="background:linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)"><span class="story-icon" aria-hidden="true">🍽️</span></div>
+  <div class="story-body">
+    <span class="story-tag">Space Dining</span>
+    <div class="story-title">Michelin Stars in Microgravity: The Rise of Orbital Fine Dining</div>
+    <p class="story-excerpt">Three celebrity chefs are designing menus for space stations. We got an exclusive taste of dishes engineered for floating consumption.</p>
+    <span class="story-meta">7 min read · April 2026</span>
+  </div>
+</div>
+
+<div class="story-card">
+  <div class="story-banner" style="background:linear-gradient(135deg, #172554 0%, #1e3a5f 50%, #1d4ed8 100%)"><span class="story-icon" aria-hidden="true">💰</span></div>
+  <div class="story-body">
+    <span class="story-tag">Pricing</span>
+    <div class="story-title">Space Tourism Price Tracker: What It Actually Costs in 2026</div>
+    <p class="story-excerpt">A comprehensive breakdown of every commercial space experience currently available, from 10-minute suborbital flights to two-week orbital stays.</p>
+    <span class="story-meta">10 min read · June 2026</span>
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-inner">
+      <h2 class="section-title">About Holiday in Orbit</h2>
+      <div class="section-rule"></div>
+      <div class="about-content"><h3>The Final Frontier of Travel</h3><p>Holiday in Orbit is the premier editorial destination for space tourism enthusiasts, future astronauts, and anyone who has ever looked up at the stars and wondered what it would be like to float among them. We track every development in commercial spaceflight and off-world hospitality.</p><h3>What We Cover</h3><p>From the engineering marvels of orbital habitats to the surprisingly tricky logistics of zero-gravity room service, we bring you in-depth reporting on the companies, technologies, and experiences shaping humanity's next great travel frontier.</p><h3>Join the Journey</h3><p>Whether you are saving up for a suborbital hop or dreaming of a week on the Moon, Holiday in Orbit is your launchpad. Subscribe to stay ahead of every booking window, price drop, and maiden voyage.</p></div>
+    </div>
+  </section>
+
+  <section class="newsletter" id="newsletter">
+    <div class="newsletter-inner">
+      <h2 class="nl-title">Get Launch Alerts</h2>
+      <p class="nl-sub">Be the first to know when new orbital destinations open for bookings. No spam, just stars.</p>
+      <form class="nl-form" id="nl-form">
+        <input type="email" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <span class="footer-logo"><span class="nav-logo-icon" aria-hidden="true">🚀</span>Holiday in Orbit</span>
+      <a href="https://sepehr.ai" class="footer-link" target="_blank" rel="noopener">sepehr.ai</a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Holiday in Orbit. All content is for informational and entertainment purposes. We are not a travel agency and do not sell tickets to space.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SITE_CONFIG = {"faqs":[{"q":"Can regular people actually go to space right now?","a":"Yes. Several companies now offer suborbital flights for civilians, and orbital stays are available for those with deeper pockets. Prices start around $250,000 for suborbital hops and go up from there."},{"q":"How long is a typical space holiday?","a":"Suborbital flights last about 10-15 minutes of weightlessness. Orbital stays currently range from 3 days to 2 weeks, though longer-duration tourism modules are in development for 2027-2028."},{"q":"Do you need astronaut training to be a space tourist?","a":"You will need some preparation, but it is far less intensive than professional astronaut training. Most programs include 3-7 days of safety briefings, G-force acclimatization, and basic spacecraft familiarization."},{"q":"Is Holiday in Orbit a travel agency?","a":"No. We are an editorial publication covering the space tourism industry. We do not sell tickets or make bookings, but we do link to official providers when covering their offerings."},{"q":"What is the best time of year to visit space?","a":"Space does not have seasons, but launch windows vary by destination and provider. Orbital hotels are accessible year-round, while lunar trips are currently planned around specific alignment windows."}],"accentColor":"#7c3aed","accentLight":"#a78bfa","accentDark":"#5b21b6","ctaText":""};
+// Newsletter form
+document.getElementById('nl-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button');
+  const input = this.querySelector('input');
+  btn.textContent = 'Subscribed';
+  btn.style.background = '#22c55e';
+  btn.style.borderColor = '#22c55e';
+  input.value = '';
+  setTimeout(() => {
+    btn.textContent = 'Subscribe';
+    btn.style.background = '';
+    btn.style.borderColor = '';
+  }, 3000);
+});
+
+// Nav scroll effect
+(function() {
+  const nav = document.getElementById('nav');
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        if (window.scrollY > 40) {
+          nav.style.borderBottomColor = 'rgba(255,255,255,0.06)';
+        } else {
+          nav.style.borderBottomColor = '';
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+
+// Intersection observer for fade-in
+(function() {
+  const sections = document.querySelectorAll('.stories, .about, .newsletter');
+  sections.forEach(function(s) { s.style.opacity = '0'; s.style.transform = 'translateY(20px)'; s.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; });
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(function(s) { observer.observe(s); });
+})();
+
+
+</script>
+</body>
+</html>
